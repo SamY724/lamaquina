@@ -8,5 +8,6 @@ dependencies = [
     "docker>=7.1.0",
     "isort>=8.0.1",
     "pytest>=9.0.3",
+    "restrictedpython>=8.0",
     "ruff>=0.15.12",
 ]

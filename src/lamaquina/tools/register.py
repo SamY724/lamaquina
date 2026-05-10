@@ -47,9 +47,12 @@ class FunctionRegistry:
                 raise ValueError(f"function {key!r} already registered")
             self._functions[key] = f
             return f
+
         return wrap(fn) if fn is not None else wrap
 
-    def _begin(self, name: str, args: tuple, kwargs: dict) -> tuple[Callable, CallRecord]:
+    def _begin(
+        self, name: str, args: tuple, kwargs: dict
+    ) -> tuple[Callable, CallRecord]:
         if name not in self._functions:
             raise KeyError(f"no function named {name!r}")
         before = copy.deepcopy(self.state)
